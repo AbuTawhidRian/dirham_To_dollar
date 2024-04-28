@@ -7,7 +7,7 @@ function multiply() {
     if (!isNaN(dhAmount)) {
         // Perform the calculation
         var total_dh = dhAmount / 3.67;
-                var result =  total_dh.toFixed(6);;
+                var result =  total_dh.toFixed(0);;
                 document.getElementById('result').value = result;
         
     } else {
