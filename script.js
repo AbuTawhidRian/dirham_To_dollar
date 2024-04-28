@@ -1,22 +1,30 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the input field
+    var dhAmountInput = document.getElementById('dhAmount');
+
+    // Prevent the default behavior of Enter key press within the input field
+    dhAmountInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+        }
+    });
+});
+
 function multiply() {
     // Get the input values
     var dhAmount = parseFloat(document.getElementById('dhAmount').value);
-    
 
     // Check if all inputs are valid numbers
     if (!isNaN(dhAmount)) {
         // Perform the calculation
         var total_dh = dhAmount / 3.67;
-                var result =  total_dh.toFixed(0);;
-                document.getElementById('result').value = result;
-        
+        var result = total_dh.toFixed(0);
+        document.getElementById('result').value = result;
     } else {
         // If any input is not a valid number, display a message
         document.getElementById('result').value = 'Please enter valid numerical values in all fields';
     }
 }
-
-
 
 function copyResult() {
     // Get the result field
@@ -38,5 +46,3 @@ function copyResult() {
         copyResultAlert.style.display = 'none';
     }, 2000);
 }
-
-
